@@ -1,1 +1,30 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './header.css';
 
+function Header() {
+    return (
+        <div className="header">
+            <Link to="/">
+                <img
+                    className="header_logo"
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/89/BigBasket_logo.png"
+                    alt="BigBasket Logo"
+                />
+            </Link>
+            <input className="header_searchInput" type="text" placeholder="Search for products..." />
+            <Link to="/cart">
+                <div className="header_cart">
+                    <span className="header_cartCount">0</span>
+                    <img
+                        className="header_cartIcon"
+                        src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+                        alt="Cart"
+                    />
+                </div>
+            </Link>
+        </div>
+    );
+}
+
+export default Header;
