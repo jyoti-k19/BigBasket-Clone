@@ -1,0 +1,19 @@
+import React from 'react';
+import './Checkout.css';
+
+function Checkout({ cartItems, checkout }) {
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+
+    return (
+        <div className="checkout">
+            <h2>Order Summary</h2>
+            <p>Total Items: {cartItems.length}</p>
+            <p>Total Price: ₹{totalPrice}</p>
+            <button onClick={checkout}>Proceed to Checkout</button>
+        </div>
+    );
+}
+
+export default Checkout;
+
+
